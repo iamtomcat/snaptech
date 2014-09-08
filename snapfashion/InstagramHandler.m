@@ -10,9 +10,12 @@
 
 UIImageView *tempView;
 
+@interface InstagramHandler ()
+@end
+
 @implementation InstagramHandler
 
--(void) getTagData:(NSString *)tag{
+-(void) getTagData:(NSString *) tag{
   //Simplify the resolution sizes instead of having to remember the formatting
   NSDictionary *resolutions = @{@"thumb":@"thumbnail",@"reg":@"standard_resolution",@"low":@"low_resolution"};
   //The urlstring to grab the tag information.
@@ -27,34 +30,26 @@ UIImageView *tempView;
     
     NSMutableArray *imageArray = [NSMutableArray array];
     for (NSDictionary *dict in jsonData[@"data"]) {
-      NSString *imageUrl = dict[@"images"][resolutions[@"thumb"]][@"url"];
+      NSString *imageUrl = dict[@"images"][resolutions[@"low"]][@"url"];
       NSLog(@"%@",imageUrl);
       [imageArray addObject:imageUrl];
     }
     [self getImages:imageArray];
-    //NSLog(@"%@",theObject[@"data"][0]);
   }] resume];
 }
 
 -(void) getImages:(NSArray *) imageUrls{
   NSURLSession *imageSession = [NSURLSession sessionWithConfiguration:[NSURLSessionConfiguration defaultSessionConfiguration]];
   
-  NSMutableArray *images = [NSMutableArray array];
+  [[self delegate] prepareForData:[imageUrls count]];
+  
   for (NSString *imageUrl in imageUrls) {
     NSLog(@"urls are %@",imageUrl);
-    
     [[imageSession downloadTaskWithURL:[NSURL URLWithString:imageUrl] completionHandler:^(NSURL *location, NSURLResponse *response, NSError *error) {
-      NSLog(@"%@",location);
       UIImage *temp = [UIImage imageWithData:[NSData dataWithContentsOfURL:location]];
-      tempView.image = temp;
-      [images addObject:temp];
+      [[self delegate] updateImageData:temp];
     }] resume];
   }
-}
-
--(void) setViewImages:(UIImageView *) imageView {
-  tempView = imageView;
-  [self getTagData:@"streetstyle"];
 }
 
 @end

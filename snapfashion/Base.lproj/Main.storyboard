@@ -30,21 +30,34 @@
                                     </subviews>
                                     <constraints>
                                         <constraint firstAttribute="bottom" secondItem="32l-8b-tyO" secondAttribute="bottom" constant="5" id="5bs-HA-fsU"/>
-                                        <constraint firstItem="32l-8b-tyO" firstAttribute="top" secondItem="D1g-ra-sNH" secondAttribute="top" constant="6" id="Lpe-Mp-CkS"/>
+                                        <constraint firstItem="32l-8b-tyO" firstAttribute="top" secondItem="D1g-ra-sNH" secondAttribute="top" constant="10" id="Lpe-Mp-CkS"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                             </tableViewCell>
-                            <tableViewCell appearanceType="aqua" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ImageCell" id="PAn-iX-RKJ">
-                                <rect key="frame" x="0.0" y="66" width="320" height="44"/>
+                            <tableViewCell appearanceType="aqua" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ImageCell" rowHeight="145" id="PAn-iX-RKJ" customClass="ImageCell">
+                                <rect key="frame" x="0.0" y="66" width="320" height="145"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="PAn-iX-RKJ" id="fIO-s5-7eb">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="144"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView appearanceType="aqua" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5Zd-ad-nKk">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="144"/>
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                        </imageView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="bottom" secondItem="5Zd-ad-nKk" secondAttribute="bottom" id="c1V-rp-PRN"/>
+                                        <constraint firstItem="5Zd-ad-nKk" firstAttribute="top" secondItem="fIO-s5-7eb" secondAttribute="top" id="i0k-G0-BPG"/>
+                                    </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="instagramImage" destination="5Zd-ad-nKk" id="nBe-KB-MJl"/>
+                                </connections>
                             </tableViewCell>
                             <tableViewCell appearanceType="aqua" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="HASH" id="8y4-aZ-O4v">
-                                <rect key="frame" x="0.0" y="110" width="320" height="44"/>
+                                <rect key="frame" x="0.0" y="211" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="8y4-aZ-O4v" id="EL3-BQ-z82">
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
@@ -67,7 +80,7 @@
                         </prototypes>
                         <connections>
                             <outlet property="dataSource" destination="VNg-Gn-zM4" id="Jdg-59-DHj"/>
-                            <outlet property="delegate" destination="VNg-Gn-zM4" id="XsE-xz-nqP"/>
+                            <outlet property="delegate" destination="VNg-Gn-zM4" id="fSN-2P-yfC"/>
                         </connections>
                     </tableView>
                 </tableViewController>

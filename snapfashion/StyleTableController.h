@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "InstagramHandler.h"
 
-@interface StyleTableController : UITableViewController <UITableViewDelegate>
-
+@interface StyleTableController : UITableViewController <UITableViewDelegate,ImagePassProtocol>
 @end

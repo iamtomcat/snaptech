@@ -8,7 +8,13 @@
 
 #import <Foundation/Foundation.h>
 
+@protocol ImagePassProtocol <NSObject>
+- (void) updateImageData:(UIImage *)image;
+- (void) prepareForData:(int)numOfImages;
+@end
+
 @interface InstagramHandler : NSObject
--(void) setViewImages:(UIImageView *) imageView;
 -(void) getTagData:(NSString *)tag;
+
+@property (nonatomic,weak) id <ImagePassProtocol> delegate;
 @end

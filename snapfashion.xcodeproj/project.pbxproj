@@ -24,6 +24,7 @@
 		C58B5A5E19BC0E46008999AC /* InstagramHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = C58B5A5D19BC0E46008999AC /* InstagramHandler.m */; };
 		C58B5A6719BC5458008999AC /* StyleTableController.m in Sources */ = {isa = PBXBuildFile; fileRef = C58B5A6619BC5458008999AC /* StyleTableController.m */; };
 		C58B5A6A19BD1490008999AC /* ImagePickerController.m in Sources */ = {isa = PBXBuildFile; fileRef = C58B5A6919BD1490008999AC /* ImagePickerController.m */; };
+		C58B5A6D19BD9900008999AC /* ImageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C58B5A6C19BD9900008999AC /* ImageCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +62,8 @@
 		C58B5A6619BC5458008999AC /* StyleTableController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StyleTableController.m; sourceTree = "<group>"; };
 		C58B5A6819BD1490008999AC /* ImagePickerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImagePickerController.h; sourceTree = "<group>"; };
 		C58B5A6919BD1490008999AC /* ImagePickerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImagePickerController.m; sourceTree = "<group>"; };
+		C58B5A6B19BD9900008999AC /* ImageCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageCell.h; sourceTree = "<group>"; };
+		C58B5A6C19BD9900008999AC /* ImageCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,6 +136,8 @@
 				C58B5A6619BC5458008999AC /* StyleTableController.m */,
 				C58B5A6819BD1490008999AC /* ImagePickerController.h */,
 				C58B5A6919BD1490008999AC /* ImagePickerController.m */,
+				C58B5A6B19BD9900008999AC /* ImageCell.h */,
+				C58B5A6C19BD9900008999AC /* ImageCell.m */,
 			);
 			path = snapfashion;
 			sourceTree = "<group>";
@@ -264,6 +269,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C58B5A6719BC5458008999AC /* StyleTableController.m in Sources */,
+				C58B5A6D19BD9900008999AC /* ImageCell.m in Sources */,
 				C58B5A5E19BC0E46008999AC /* InstagramHandler.m in Sources */,
 				C58B5A6A19BD1490008999AC /* ImagePickerController.m in Sources */,
 				C574489319BBC85300BBCC3B /* AppDelegate.m in Sources */,
