@@ -14,13 +14,16 @@
 		C574488F19BBC85300BBCC3B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C574488E19BBC85300BBCC3B /* main.m */; };
 		C574489319BBC85300BBCC3B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C574489219BBC85300BBCC3B /* AppDelegate.m */; };
 		C574489619BBC85300BBCC3B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C574489419BBC85300BBCC3B /* Main.storyboard */; };
-		C574489919BBC85300BBCC3B /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C574489819BBC85300BBCC3B /* ViewController.m */; };
 		C574489B19BBC85300BBCC3B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C574489A19BBC85300BBCC3B /* Images.xcassets */; };
 		C57448A219BBC85300BBCC3B /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C57448A119BBC85300BBCC3B /* XCTest.framework */; };
 		C57448A319BBC85300BBCC3B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C574488219BBC85300BBCC3B /* Foundation.framework */; };
 		C57448A419BBC85300BBCC3B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C574488619BBC85300BBCC3B /* UIKit.framework */; };
 		C57448AC19BBC85300BBCC3B /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C57448AA19BBC85300BBCC3B /* InfoPlist.strings */; };
 		C57448AE19BBC85300BBCC3B /* snapfashionTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C57448AD19BBC85300BBCC3B /* snapfashionTests.m */; };
+		C58B5A5819BBE664008999AC /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C58B5A5719BBE664008999AC /* MobileCoreServices.framework */; };
+		C58B5A5E19BC0E46008999AC /* InstagramHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = C58B5A5D19BC0E46008999AC /* InstagramHandler.m */; };
+		C58B5A6719BC5458008999AC /* StyleTableController.m in Sources */ = {isa = PBXBuildFile; fileRef = C58B5A6619BC5458008999AC /* StyleTableController.m */; };
+		C58B5A6A19BD1490008999AC /* ImagePickerController.m in Sources */ = {isa = PBXBuildFile; fileRef = C58B5A6919BD1490008999AC /* ImagePickerController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,14 +48,19 @@
 		C574489119BBC85300BBCC3B /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		C574489219BBC85300BBCC3B /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		C574489519BBC85300BBCC3B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		C574489719BBC85300BBCC3B /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		C574489819BBC85300BBCC3B /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		C574489A19BBC85300BBCC3B /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		C57448A019BBC85300BBCC3B /* snapfashionTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = snapfashionTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C57448A119BBC85300BBCC3B /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		C57448A919BBC85300BBCC3B /* snapfashionTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "snapfashionTests-Info.plist"; sourceTree = "<group>"; };
 		C57448AB19BBC85300BBCC3B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		C57448AD19BBC85300BBCC3B /* snapfashionTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = snapfashionTests.m; sourceTree = "<group>"; };
+		C58B5A5719BBE664008999AC /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		C58B5A5C19BC0E46008999AC /* InstagramHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InstagramHandler.h; sourceTree = "<group>"; };
+		C58B5A5D19BC0E46008999AC /* InstagramHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InstagramHandler.m; sourceTree = "<group>"; };
+		C58B5A6519BC5458008999AC /* StyleTableController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StyleTableController.h; sourceTree = "<group>"; };
+		C58B5A6619BC5458008999AC /* StyleTableController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StyleTableController.m; sourceTree = "<group>"; };
+		C58B5A6819BD1490008999AC /* ImagePickerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImagePickerController.h; sourceTree = "<group>"; };
+		C58B5A6919BD1490008999AC /* ImagePickerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImagePickerController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +68,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C58B5A5819BBE664008999AC /* MobileCoreServices.framework in Frameworks */,
 				C574488519BBC85300BBCC3B /* CoreGraphics.framework in Frameworks */,
 				C574488719BBC85300BBCC3B /* UIKit.framework in Frameworks */,
 				C574488319BBC85300BBCC3B /* Foundation.framework in Frameworks */,
@@ -101,6 +110,7 @@
 		C574488119BBC85300BBCC3B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				C58B5A5719BBE664008999AC /* MobileCoreServices.framework */,
 				C574488219BBC85300BBCC3B /* Foundation.framework */,
 				C574488419BBC85300BBCC3B /* CoreGraphics.framework */,
 				C574488619BBC85300BBCC3B /* UIKit.framework */,
@@ -115,10 +125,14 @@
 				C574489119BBC85300BBCC3B /* AppDelegate.h */,
 				C574489219BBC85300BBCC3B /* AppDelegate.m */,
 				C574489419BBC85300BBCC3B /* Main.storyboard */,
-				C574489719BBC85300BBCC3B /* ViewController.h */,
-				C574489819BBC85300BBCC3B /* ViewController.m */,
+				C58B5A5C19BC0E46008999AC /* InstagramHandler.h */,
+				C58B5A5D19BC0E46008999AC /* InstagramHandler.m */,
 				C574489A19BBC85300BBCC3B /* Images.xcassets */,
 				C574488919BBC85300BBCC3B /* Supporting Files */,
+				C58B5A6519BC5458008999AC /* StyleTableController.h */,
+				C58B5A6619BC5458008999AC /* StyleTableController.m */,
+				C58B5A6819BD1490008999AC /* ImagePickerController.h */,
+				C58B5A6919BD1490008999AC /* ImagePickerController.m */,
 			);
 			path = snapfashion;
 			sourceTree = "<group>";
@@ -249,7 +263,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C574489919BBC85300BBCC3B /* ViewController.m in Sources */,
+				C58B5A6719BC5458008999AC /* StyleTableController.m in Sources */,
+				C58B5A5E19BC0E46008999AC /* InstagramHandler.m in Sources */,
+				C58B5A6A19BD1490008999AC /* ImagePickerController.m in Sources */,
 				C574489319BBC85300BBCC3B /* AppDelegate.m in Sources */,
 				C574488F19BBC85300BBCC3B /* main.m in Sources */,
 			);
@@ -456,6 +472,7 @@
 				C57448B319BBC85300BBCC3B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C57448B419BBC85300BBCC3B /* Build configuration list for PBXNativeTarget "snapfashionTests" */ = {
 			isa = XCConfigurationList;
@@ -464,6 +481,7 @@
 				C57448B619BBC85300BBCC3B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
