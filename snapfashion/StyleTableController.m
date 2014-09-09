@@ -41,11 +41,13 @@
     // Dispose of any resources that can be recreated.
 }
 
+//Update number of images that are to be loaded
 - (void) prepareForData:(int)numOfImages {
   numImages += numOfImages;
   [self.tableView reloadData];
 }
 
+//Load image into array and reload the section
 - (void) updateImageData:(UIImage *)image {
   NSLog(@"Image updated");
   [Images addObject:image];
@@ -61,6 +63,7 @@
   });
 }
 
+//Helper function for creating the floating buttons at the top and bottom of screen.
 - (UILabel *)createButtonLabel:(NSString *)text {
   CGRect newFrame = CGRectMake(91.0f, 16.0f, 138.0f, 32.0f);
   UIFont *newFont = [UIFont boldSystemFontOfSize:35.0f];
@@ -75,14 +78,17 @@
   return temp;
 }
 
+//Helper function to make code more readable.
 - (BOOL) hashLabelVisible {
   return [HashButton isDescendantOfView:self.tableView.superview];
 }
 
+//Handler for hash button
 - (void)hashTap:(id)sender {
   [igHandler getTagData:@"streetstyle"];
 }
 
+//Add hash button function
 - (void)addHashButton {
   if (HashButton==nil) {
     CGRect buttonFrame = [[self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]] frame];
@@ -92,6 +98,7 @@
     HashButton = [[UIView alloc] initWithFrame:buttonFrame];
     HashButton.backgroundColor = [UIColor whiteColor];
     
+    //Tap recognizer for button
     UITapGestureRecognizer *hashTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(hashTap:)];
     [HashButton addGestureRecognizer:hashTap];
     
@@ -103,6 +110,7 @@
   }
 }
 
+//Used to remove hash button if the related cell is visible on the screen
 - (void)removeHashButton {
   NSArray *visIndexes = [self.tableView indexPathsForVisibleRows];
   for (NSIndexPath *index in visIndexes) {
@@ -115,6 +123,7 @@
   }
 }
 
+//Helper function to make code more readable.
 - (BOOL) snapLabelVisible {
   return [SnapButton isDescendantOfView:self.tableView.superview];
 }
@@ -132,6 +141,8 @@
   }
 }
 
+//open the camera if the floating button is pressed
+//check which buttons are actually visible before removing them.
 - (void)snapTap:(id)sender {
   if (camera==nil) {
     camera = [ImagePickerController alloc];
@@ -153,6 +164,8 @@
   [camera initCamera:self];
 }
 
+
+//Add floating button for snap
 - (void)addSnapLabel {
   if (SnapButton==nil) {
     SnapButton = [[UIView alloc] initWithFrame:[[self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]] frame]];
@@ -165,12 +178,12 @@
     [SnapButton addSubview:snapLabel];
   }
   
-  
   if (![self snapLabelVisible]) {
     [self.tableView.superview addSubview:SnapButton];
   }
 }
 
+//For removing the snap button when scrolling
 - (void)removeSnapLabel {
   NSArray *visIndexes = [self.tableView indexPathsForVisibleRows];
   for (NSIndexPath *index in visIndexes) {
@@ -208,26 +221,30 @@
   if (section==0 || section==2) {
     return 1;
   }
+  //Pre create some cells on click
   if (clicked && numImages==0) {
     return 5;
   }
-  NSLog(@"cheese %d", [Images count]);
   // Return the number of rows in the section.
   return numImages;
 }
 
 
 - (CGFloat) tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+  //Initial height of image cells
   if ([Images count]==0 && clicked==NO) {
     return [[UIScreen mainScreen] bounds].size.height/2.0f;
   }
+  //Image cell size
   if (indexPath.section==1) {
     return 144.0f;
   }
+  //Other cell size
   return 60.0f;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+  //Load the 3 different cells
   if (indexPath.section==0) {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"SNAP" forIndexPath:indexPath];
     return cell;
@@ -239,32 +256,36 @@
   if (indexPath.row<[Images count]) {
     NSLog(@"image %@",[Images objectAtIndex:indexPath.row]);
     
-      dispatch_async(dispatch_get_main_queue(), ^{
-        UIImage *img = [Images objectAtIndex:indexPath.row];
+    //Load image into cell
+    dispatch_async(dispatch_get_main_queue(), ^{
+      UIImage *img = [Images objectAtIndex:indexPath.row];
         
-        // Make a trivial (1x1) graphics context, and draw the image into it
-        UIGraphicsBeginImageContext(CGSizeMake(1,1));
-        CGContextRef context = UIGraphicsGetCurrentContext();
-        CGContextDrawImage(context, CGRectMake(0, 0, 1, 1), [img CGImage]);
-        UIGraphicsEndImageContext();
+      // Make a trivial (1x1) graphics context, and draw the image into it
+      //speed up uiimage loading
+      UIGraphicsBeginImageContext(CGSizeMake(1,1));
+      CGContextRef context = UIGraphicsGetCurrentContext();
+      CGContextDrawImage(context, CGRectMake(0, 0, 1, 1), [img CGImage]);
+      UIGraphicsEndImageContext();
 
-        cell.instagramImage.image = img;
-        [UIView animateWithDuration:0.8f animations:^{
-          cell.instagramImage.alpha = 1.0f;
-        }];
-      });
+      cell.instagramImage.image = img;
+      //fade the image in
+      [UIView animateWithDuration:0.8f animations:^{
+        cell.instagramImage.alpha = 1.0f;
+      }];
+    });
   }
   return cell;
 }
 
+//Handle clicks of the 2 cells for camera and loading of instagram images.
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-  if ([indexPath isEqual:[NSIndexPath indexPathForRow:0 inSection:0]]) {
+  if ([indexPath isEqual:[NSIndexPath indexPathForRow:0 inSection:0]]) {//Camera
     NSLog(@"Open Camera Button Pressed");
     if (camera==nil) {
       camera = [ImagePickerController alloc];
     }
     [camera initCamera:self];
-  } else if ([indexPath isEqual:[NSIndexPath indexPathForRow:0 inSection:2]]) {
+  } else if ([indexPath isEqual:[NSIndexPath indexPathForRow:0 inSection:2]]) {//Instagram
     NSLog(@"Instagram Button Pressed");
     if (igHandler==nil) {
       igHandler = [InstagramHandler alloc];
