@@ -10,4 +10,5 @@
 #import "InstagramHandler.h"
 
 @interface StyleTableController : UITableViewController <UITableViewDelegate,ImagePassProtocol>
+- (void)showButtons;
 @end

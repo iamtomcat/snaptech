@@ -10,6 +10,8 @@
 #import "ImagePickerController.h"
 #import "ImageCell.h"
 
+#define SMALLBUTTON_HEIGHT 60.0f
+
 @interface StyleTableController () {
   ImagePickerController *camera;
   InstagramHandler *igHandler;
@@ -18,18 +20,12 @@
   int addCount;
   int numImages;
   CGPoint startPoint;
+  UIView *SnapButton, *HashButton;
+  BOOL SnapButtonVisible,HashButtonVisible;
 }
 @end
 
 @implementation StyleTableController
-
-- (id)initWithStyle:(UITableViewStyle)style {
-    self = [super initWithStyle:style];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
 
 - (void)viewDidLoad {
   [super viewDidLoad];
@@ -38,12 +34,6 @@
   addCount = 0;
   numImages = 0;
   startPoint = CGPointZero;
-    
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
-    
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -52,18 +42,8 @@
 }
 
 - (void) prepareForData:(int)numOfImages {
-  numImages = numOfImages;
-  
-//  [self.tableView beginUpdates];
-//  NSMutableArray *indexPaths = [NSMutableArray array];
-//  for (int x=0; x<numImages; x++) {
-//    [indexPaths addObject:[NSIndexPath indexPathForRow:x inSection:1]];
-//  }
-//  [self.tableView insertRowsAtIndexPaths:indexPaths withRowAnimation:UITableViewRowAnimationLeft];
-//
-//  [self.tableView endUpdates];
+  numImages += numOfImages;
   [self.tableView reloadData];
-  //[self.tableView reloadSections:[NSIndexSet indexSetWithIndex:1] withRowAnimation:UITableViewRowAnimationMiddle];
 }
 
 - (void) updateImageData:(UIImage *)image {
@@ -79,35 +59,143 @@
       [self.tableView reloadRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:5 inSection:1]] withRowAnimation:UITableViewRowAnimationFade];
     });
   });
-  
 }
 
--(void)scrollViewWillBeginDragging:(UIScrollView *)scrollView {
+- (UILabel *)createButtonLabel:(NSString *)text {
+  CGRect newFrame = CGRectMake(91.0f, 16.0f, 138.0f, 32.0f);
+  UIFont *newFont = [UIFont boldSystemFontOfSize:35.0f];
+  if ([text isEqualToString:@"#"]) {
+    newFrame = CGRectMake(147.0f, 10.0f, 26.0f, 44.0f);
+    newFont = [UIFont boldSystemFontOfSize:40.0f];
+  }
+  
+  UILabel *temp = [[UILabel alloc] initWithFrame:newFrame];
+  temp.text = text;
+  temp.font = newFont;
+  return temp;
+}
+
+- (BOOL) hashLabelVisible {
+  return [HashButton isDescendantOfView:self.tableView.superview];
+}
+
+- (void)hashTap:(id)sender {
+  [igHandler getTagData:@"streetstyle"];
+}
+
+- (void)addHashButton {
+  if (HashButton==nil) {
+    CGRect buttonFrame = [[self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]] frame];
+    buttonFrame.size.height = SMALLBUTTON_HEIGHT;
+    buttonFrame.origin.y = [[UIScreen mainScreen] bounds].size.height - SMALLBUTTON_HEIGHT;
+    NSLog(@"%f",buttonFrame.size.height);
+    HashButton = [[UIView alloc] initWithFrame:buttonFrame];
+    HashButton.backgroundColor = [UIColor whiteColor];
+    
+    UITapGestureRecognizer *hashTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(hashTap:)];
+    [HashButton addGestureRecognizer:hashTap];
+    
+    UILabel *hashLabel = [self createButtonLabel:@"#"];
+    [HashButton addSubview:hashLabel];
+  }
+  if (![HashButton isDescendantOfView:self.tableView.superview]) {
+    [self.tableView.superview addSubview:HashButton];
+  }
+}
+
+- (void)removeHashButton {
+  NSArray *visIndexes = [self.tableView indexPathsForVisibleRows];
+  for (NSIndexPath *index in visIndexes) {
+    if (index.row == 0 && index.section==2) {
+      if ([HashButton isDescendantOfView:self.tableView.superview]) {
+        [HashButton removeFromSuperview];
+        break;
+      }
+    }
+  }
+}
+
+- (BOOL) snapLabelVisible {
+  return [SnapButton isDescendantOfView:self.tableView.superview];
+}
+
+- (void)showButtons {
+  if (SnapButtonVisible) {
+    [UIView animateWithDuration:0.5f animations:^{
+      SnapButton.alpha = 1.0f;
+    }];
+  }
+  if (HashButtonVisible) {
+    [UIView animateWithDuration:0.5f animations:^{
+      HashButton.alpha = 1.0f;
+    }];
+  }
+}
+
+- (void)snapTap:(id)sender {
+  if (camera==nil) {
+    camera = [ImagePickerController alloc];
+  }
+  
+  SnapButtonVisible = [self snapLabelVisible];
+  if (SnapButtonVisible) {
+    [UIView animateWithDuration:0.5f animations:^{
+      SnapButton.alpha = 0.0f;
+    }];
+  }
+  HashButtonVisible = [self hashLabelVisible];
+  if (HashButtonVisible) {
+    [UIView animateWithDuration:0.5f animations:^{
+      HashButton.alpha = 0.0f;
+    }];
+  }
+  
+  [camera initCamera:self];
+}
+
+- (void)addSnapLabel {
+  if (SnapButton==nil) {
+    SnapButton = [[UIView alloc] initWithFrame:[[self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]] frame]];
+    SnapButton.backgroundColor = [UIColor whiteColor];
+    
+    UITapGestureRecognizer *snapTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(snapTap:)];
+    [SnapButton addGestureRecognizer:snapTap];
+    
+    UILabel *snapLabel = [self createButtonLabel:@"SNAP IT"];
+    [SnapButton addSubview:snapLabel];
+  }
+  
+  
+  if (![self snapLabelVisible]) {
+    [self.tableView.superview addSubview:SnapButton];
+  }
+}
+
+- (void)removeSnapLabel {
+  NSArray *visIndexes = [self.tableView indexPathsForVisibleRows];
+  for (NSIndexPath *index in visIndexes) {
+    if (index.row == 0 && index.section==0) {
+      if ([self snapLabelVisible]) {
+        [SnapButton removeFromSuperview];
+        break;
+      }
+    }
+  }
+}
+
+- (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView {
   startPoint = scrollView.contentOffset;
 }
 
--(void)scrollViewDidScroll:(UIScrollView *)scrollView {
-  if (scrollView.contentOffset.y<startPoint.y) {
-    NSLog(@"down");
-    NSArray *visIndexes = [self.tableView indexPathsForVisibleRows];
-    for (NSIndexPath *index in visIndexes) {
-      if (index.row == 0 && index.section==0) {
-        [[self.tableView.superview viewWithTag:20] removeFromSuperview];
-      }
-    }
-    
-  } else if (scrollView.contentOffset.y>startPoint.y) {
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
+  if (scrollView.contentOffset.y<startPoint.y && clicked) {
+    NSLog(@"down %@",[self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:2]]);
+    [self removeSnapLabel];
+    [self addHashButton];
+  } else if (scrollView.contentOffset.y>startPoint.y && clicked) {
     NSLog(@"up");
-    NSArray *visIndexes = [self.tableView indexPathsForVisibleRows];
-    for (NSIndexPath *index in visIndexes) {
-      if (!(index.row == 0 && index.section==0)) {
-        UIView *stickyViewSnap = [[UIView alloc] initWithFrame:[[self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]] frame]];
-        stickyViewSnap.tag = 20;
-        stickyViewSnap.backgroundColor = [UIColor purpleColor];
-        
-        [self.tableView.superview addSubview:stickyViewSnap];
-      }
-    }
+    [self addSnapLabel];
+    [self removeHashButton];
   }
 }
 
@@ -147,15 +235,20 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"HASH" forIndexPath:indexPath];
     return cell;
   }
-  NSLog(@"Called %d %d %d", indexPath.section, indexPath.row,[Images count]);
   ImageCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ImageCell" forIndexPath:indexPath];
   if (indexPath.row<[Images count]) {
     NSLog(@"image %@",[Images objectAtIndex:indexPath.row]);
     
       dispatch_async(dispatch_get_main_queue(), ^{
-        ImageCell *updateCell = (id)[tableView cellForRowAtIndexPath:indexPath];
-        //if (updateCell)
-        cell.instagramImage.image = [Images objectAtIndex:indexPath.row];
+        UIImage *img = [Images objectAtIndex:indexPath.row];
+        
+        // Make a trivial (1x1) graphics context, and draw the image into it
+        UIGraphicsBeginImageContext(CGSizeMake(1,1));
+        CGContextRef context = UIGraphicsGetCurrentContext();
+        CGContextDrawImage(context, CGRectMake(0, 0, 1, 1), [img CGImage]);
+        UIGraphicsEndImageContext();
+
+        cell.instagramImage.image = img;
         [UIView animateWithDuration:0.8f animations:^{
           cell.instagramImage.alpha = 1.0f;
         }];
@@ -177,6 +270,7 @@
       igHandler = [InstagramHandler alloc];
       igHandler.delegate = self;
     }
+    [self addHashButton];
     clicked=YES;
     [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:1] withRowAnimation:UITableViewRowAnimationTop];
     [igHandler getTagData:@"streetstyle"];

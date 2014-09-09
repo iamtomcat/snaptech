@@ -7,14 +7,16 @@
 //
 
 #import "ImagePickerController.h"
+#import "StyleTableController.h"
 #import <MobileCoreServices/MobileCoreServices.h>
 
 @interface ImagePickerController () {
-id controllingView;
+StyleTableController *controllingView;
 }
 @end
 
 @implementation ImagePickerController
+//Bring up camera overlay
 - (BOOL) initCamera: (id) view {
   NSLog(@"%d",[UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera] );
   if (![UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera] || (view == nil)) {
@@ -33,10 +35,13 @@ id controllingView;
   return YES;
 }
 
+//Handle closing camera controls.
 - (void) imagePickerControllerDidCancel: (UIImagePickerController *) picker {
+  [controllingView showButtons];
   [controllingView dismissViewControllerAnimated:YES completion:nil];
 }
 
+//Handle Saving image
 - (void) imagePickerController: (UIImagePickerController *) picker didFinishPickingMediaWithInfo: (NSDictionary *) info {
   NSString *mediaType = [info objectForKey: UIImagePickerControllerMediaType];
   UIImage *originalImage, *editedImage, *imageToSave;
@@ -50,10 +55,10 @@ id controllingView;
     } else {
       imageToSave = originalImage;
     }
-    
     UIImageWriteToSavedPhotosAlbum (imageToSave, nil, nil , nil);
   }
   
+  [controllingView showButtons];
   [controllingView dismissViewControllerAnimated:YES completion:nil];
 }
 @end

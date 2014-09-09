@@ -20,7 +20,7 @@
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label appearanceType="aqua" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="SNAP IT" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="32l-8b-tyO">
+                                        <label appearanceType="aqua" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="SNAP IT" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="32l-8b-tyO">
                                             <rect key="frame" x="91" y="6" width="138" height="32"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="35"/>
@@ -29,8 +29,10 @@
                                         </label>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstAttribute="bottom" secondItem="32l-8b-tyO" secondAttribute="bottom" constant="5" id="5bs-HA-fsU"/>
+                                        <constraint firstAttribute="bottom" secondItem="32l-8b-tyO" secondAttribute="bottom" constant="12" id="5bs-HA-fsU"/>
+                                        <constraint firstItem="32l-8b-tyO" firstAttribute="leading" secondItem="D1g-ra-sNH" secondAttribute="leading" constant="91" id="KQV-E4-5Lf"/>
                                         <constraint firstItem="32l-8b-tyO" firstAttribute="top" secondItem="D1g-ra-sNH" secondAttribute="top" constant="10" id="Lpe-Mp-CkS"/>
+                                        <constraint firstAttribute="trailing" secondItem="32l-8b-tyO" secondAttribute="trailing" constant="91" id="sIX-FT-54u"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
@@ -42,12 +44,14 @@
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="144"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView appearanceType="aqua" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5Zd-ad-nKk">
+                                        <imageView appearanceType="aqua" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="5Zd-ad-nKk">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="144"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                         </imageView>
                                     </subviews>
                                     <constraints>
+                                        <constraint firstItem="5Zd-ad-nKk" firstAttribute="leading" secondItem="fIO-s5-7eb" secondAttribute="leading" id="2BS-Yp-vHH"/>
+                                        <constraint firstAttribute="trailing" secondItem="5Zd-ad-nKk" secondAttribute="trailing" id="UW6-h1-9kH"/>
                                         <constraint firstAttribute="bottom" secondItem="5Zd-ad-nKk" secondAttribute="bottom" id="c1V-rp-PRN"/>
                                         <constraint firstItem="5Zd-ad-nKk" firstAttribute="top" secondItem="fIO-s5-7eb" secondAttribute="top" id="i0k-G0-BPG"/>
                                     </constraints>
@@ -63,7 +67,7 @@
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label appearanceType="aqua" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="#" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pYi-1x-xpl">
+                                        <label appearanceType="aqua" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="#" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pYi-1x-xpl">
                                             <rect key="frame" x="147" y="0.0" width="26" height="44"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="40"/>
@@ -72,7 +76,9 @@
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="pYi-1x-xpl" firstAttribute="top" secondItem="EL3-BQ-z82" secondAttribute="top" id="18R-5F-Cwb"/>
+                                        <constraint firstAttribute="trailing" secondItem="pYi-1x-xpl" secondAttribute="trailing" constant="147" id="d1w-Wg-P0q"/>
                                         <constraint firstAttribute="bottom" secondItem="pYi-1x-xpl" secondAttribute="bottom" constant="-1" id="iEW-BV-hT6"/>
+                                        <constraint firstItem="pYi-1x-xpl" firstAttribute="leading" secondItem="EL3-BQ-z82" secondAttribute="leading" constant="147" id="jEN-zf-0f8"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
