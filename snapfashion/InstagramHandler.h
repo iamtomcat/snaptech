@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-
+//Protocol for passing data between tableview and instgramhandler
 @protocol ImagePassProtocol <NSObject>
 - (void) updateImageData:(UIImage *)image;
 - (void) prepareForData:(int)numOfImages;

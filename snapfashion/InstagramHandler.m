@@ -12,6 +12,7 @@
 UIImageView *tempView;
 
 @interface InstagramHandler ()
+//Variable to hold session
 @property (strong, nonatomic) NSURLSession *session;
 @end
 
