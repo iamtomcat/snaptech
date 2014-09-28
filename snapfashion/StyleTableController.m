@@ -224,7 +224,7 @@
 
 #pragma mark - Table view data source
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 3;
+    return 2;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -257,9 +257,6 @@
   //Load the 3 different cells
   if (indexPath.section==0) {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"SNAP" forIndexPath:indexPath];
-    return cell;
-  } else if (indexPath.section==2) {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"HASH" forIndexPath:indexPath];
     return cell;
   }
   ImageCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ImageCell" forIndexPath:indexPath];

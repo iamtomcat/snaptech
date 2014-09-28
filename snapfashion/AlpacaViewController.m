@@ -24,6 +24,7 @@
     // Dispose of any resources that can be recreated.
 }
 
+//Just a button to close segue
 - (IBAction)pressImage:(id)sender {
   [self.presentingViewController dismissViewControllerAnimated:YES completion:nil];
 }

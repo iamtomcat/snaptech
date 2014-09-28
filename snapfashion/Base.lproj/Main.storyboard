@@ -227,28 +227,6 @@
                                     <outlet property="instagramImage" destination="5Zd-ad-nKk" id="nBe-KB-MJl"/>
                                 </connections>
                             </tableViewCell>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="HASH" id="8y4-aZ-O4v">
-                                <rect key="frame" x="0.0" y="211" width="320" height="44"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="8y4-aZ-O4v" id="EL3-BQ-z82">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="#" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pYi-1x-xpl">
-                                            <rect key="frame" x="147" y="0.0" width="26" height="44"/>
-                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="40"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                    </subviews>
-                                    <constraints>
-                                        <constraint firstItem="pYi-1x-xpl" firstAttribute="top" secondItem="EL3-BQ-z82" secondAttribute="top" id="18R-5F-Cwb"/>
-                                        <constraint firstAttribute="trailing" secondItem="pYi-1x-xpl" secondAttribute="trailing" constant="147" id="d1w-Wg-P0q"/>
-                                        <constraint firstAttribute="bottom" secondItem="pYi-1x-xpl" secondAttribute="bottom" constant="-1" id="iEW-BV-hT6"/>
-                                        <constraint firstItem="pYi-1x-xpl" firstAttribute="leading" secondItem="EL3-BQ-z82" secondAttribute="leading" constant="147" id="jEN-zf-0f8"/>
-                                    </constraints>
-                                </tableViewCellContentView>
-                                <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                            </tableViewCell>
                         </prototypes>
                         <connections>
                             <outlet property="dataSource" destination="VNg-Gn-zM4" id="Jdg-59-DHj"/>

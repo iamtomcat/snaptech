@@ -27,7 +27,7 @@
   [super viewDidLoad];
   screenSize = [[UIScreen mainScreen] bounds].size;
   [self initVideoView];
-  [self initBottomHalf];
+  self.bottomView.backgroundColor = [UIColor clearColor];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -35,10 +35,12 @@
     // Dispose of any resources that can be recreated.
 }
 
+//Initialize video playback
 - (void) initVideoView {
   videoCamera = [[GPUImageVideoCamera alloc]initWithSessionPreset:AVCaptureSessionPresetMedium cameraPosition:AVCaptureDevicePositionBack];
   videoCamera.outputImageOrientation = UIInterfaceOrientationPortrait;
   
+  //Setup Gaussian filter
   GPUImageFilter *gaussFilter = [[GPUImageGaussianBlurFilter alloc]init];
   [(GPUImageGaussianBlurFilter *)gaussFilter setBlurRadiusInPixels:10.0f];
   
@@ -54,14 +56,12 @@
   [videoCamera startCameraCapture];
 }
 
-- (void) initBottomHalf {
-  self.bottomView.backgroundColor = [UIColor clearColor];
-}
-
+//Function for starting the video again when coming back from the camera.
 - (void) startVideo {
   [self initVideoView];
 }
 
+//Open camera view
 - (IBAction) handleSnapButton:(id)sender {
   if (camera==nil) {
     camera = [ImagePickerController alloc];

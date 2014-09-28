@@ -24,6 +24,7 @@
   CGContextAddLineToPoint(ctx, CGRectGetMaxX(rect), CGRectGetMinY(rect)); //Top Right
   CGContextAddLineToPoint(ctx, CGRectGetMinX(rect), CGRectGetMidY(rect)); //Mid Left
   
+  //Close the shape
   CGContextClosePath(ctx);
   
   CGContextClip(ctx);
