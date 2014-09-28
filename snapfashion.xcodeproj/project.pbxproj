@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C53D4DDB19D5F05C00CCAEBB /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C53D4DDA19D5F05C00CCAEBB /* AVFoundation.framework */; };
+		C53D4DDE19D5F2CF00CCAEBB /* OverlayView.m in Sources */ = {isa = PBXBuildFile; fileRef = C53D4DDD19D5F2CF00CCAEBB /* OverlayView.m */; };
 		C574488319BBC85300BBCC3B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C574488219BBC85300BBCC3B /* Foundation.framework */; };
 		C574488519BBC85300BBCC3B /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C574488419BBC85300BBCC3B /* CoreGraphics.framework */; };
 		C574488719BBC85300BBCC3B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C574488619BBC85300BBCC3B /* UIKit.framework */; };
@@ -15,11 +17,20 @@
 		C574489319BBC85300BBCC3B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C574489219BBC85300BBCC3B /* AppDelegate.m */; };
 		C574489619BBC85300BBCC3B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C574489419BBC85300BBCC3B /* Main.storyboard */; };
 		C574489B19BBC85300BBCC3B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C574489A19BBC85300BBCC3B /* Images.xcassets */; };
-		C57448A219BBC85300BBCC3B /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C57448A119BBC85300BBCC3B /* XCTest.framework */; };
 		C57448A319BBC85300BBCC3B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C574488219BBC85300BBCC3B /* Foundation.framework */; };
 		C57448A419BBC85300BBCC3B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C574488619BBC85300BBCC3B /* UIKit.framework */; };
 		C57448AC19BBC85300BBCC3B /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C57448AA19BBC85300BBCC3B /* InfoPlist.strings */; };
 		C57448AE19BBC85300BBCC3B /* snapfashionTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C57448AD19BBC85300BBCC3B /* snapfashionTests.m */; };
+		C58841ED19D755F900CCE4A4 /* Release-iphone in Resources */ = {isa = PBXBuildFile; fileRef = C58841EC19D755F900CCE4A4 /* Release-iphone */; };
+		C58841EF19D7580F00CCE4A4 /* libGPUImage.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C58841EE19D7580F00CCE4A4 /* libGPUImage.a */; };
+		C58841F219D76AFF00CCE4A4 /* DiagView.m in Sources */ = {isa = PBXBuildFile; fileRef = C58841F119D76AFF00CCE4A4 /* DiagView.m */; };
+		C58841F719D7769D00CCE4A4 /* alpacas.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C58841F619D7769D00CCE4A4 /* alpacas.jpg */; };
+		C58841FC19D7A2E300CCE4A4 /* reveal-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = C58841FA19D7A2E300CCE4A4 /* reveal-icon.png */; };
+		C58841FD19D7A2E300CCE4A4 /* reveal-icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C58841FB19D7A2E300CCE4A4 /* reveal-icon@2x.png */; };
+		C58841FF19D7C01100CCE4A4 /* Header.png in Resources */ = {isa = PBXBuildFile; fileRef = C58841FE19D7C01100CCE4A4 /* Header.png */; };
+		C588420219D7C11200CCE4A4 /* Trending logo.png in Resources */ = {isa = PBXBuildFile; fileRef = C588420019D7C11200CCE4A4 /* Trending logo.png */; };
+		C588420319D7C11200CCE4A4 /* Snap Logo.png in Resources */ = {isa = PBXBuildFile; fileRef = C588420119D7C11200CCE4A4 /* Snap Logo.png */; };
+		C588420A19D7CB0B00CCE4A4 /* style.png in Resources */ = {isa = PBXBuildFile; fileRef = C588420919D7CB0B00CCE4A4 /* style.png */; };
 		C58B5A5819BBE664008999AC /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C58B5A5719BBE664008999AC /* MobileCoreServices.framework */; };
 		C58B5A5E19BC0E46008999AC /* InstagramHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = C58B5A5D19BC0E46008999AC /* InstagramHandler.m */; };
 		C58B5A6719BC5458008999AC /* StyleTableController.m in Sources */ = {isa = PBXBuildFile; fileRef = C58B5A6619BC5458008999AC /* StyleTableController.m */; };
@@ -38,6 +49,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		C53D4DDA19D5F05C00CCAEBB /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		C53D4DDC19D5F2CF00CCAEBB /* OverlayView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OverlayView.h; sourceTree = "<group>"; };
+		C53D4DDD19D5F2CF00CCAEBB /* OverlayView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OverlayView.m; sourceTree = "<group>"; };
 		C574487F19BBC85300BBCC3B /* snapfashion.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = snapfashion.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C574488219BBC85300BBCC3B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		C574488419BBC85300BBCC3B /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -51,10 +65,20 @@
 		C574489519BBC85300BBCC3B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C574489A19BBC85300BBCC3B /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		C57448A019BBC85300BBCC3B /* snapfashionTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = snapfashionTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		C57448A119BBC85300BBCC3B /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		C57448A919BBC85300BBCC3B /* snapfashionTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "snapfashionTests-Info.plist"; sourceTree = "<group>"; };
 		C57448AB19BBC85300BBCC3B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		C57448AD19BBC85300BBCC3B /* snapfashionTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = snapfashionTests.m; sourceTree = "<group>"; };
+		C58841EC19D755F900CCE4A4 /* Release-iphone */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "Release-iphone"; sourceTree = "<group>"; };
+		C58841EE19D7580F00CCE4A4 /* libGPUImage.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libGPUImage.a; path = "Release-iphone/lib/libGPUImage.a"; sourceTree = "<group>"; };
+		C58841F019D76AFF00CCE4A4 /* DiagView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DiagView.h; sourceTree = "<group>"; };
+		C58841F119D76AFF00CCE4A4 /* DiagView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DiagView.m; sourceTree = "<group>"; };
+		C58841F619D7769D00CCE4A4 /* alpacas.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = alpacas.jpg; sourceTree = "<group>"; };
+		C58841FA19D7A2E300CCE4A4 /* reveal-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "reveal-icon.png"; sourceTree = "<group>"; };
+		C58841FB19D7A2E300CCE4A4 /* reveal-icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "reveal-icon@2x.png"; sourceTree = "<group>"; };
+		C58841FE19D7C01100CCE4A4 /* Header.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Header.png; sourceTree = "<group>"; };
+		C588420019D7C11200CCE4A4 /* Trending logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Trending logo.png"; sourceTree = "<group>"; };
+		C588420119D7C11200CCE4A4 /* Snap Logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Snap Logo.png"; sourceTree = "<group>"; };
+		C588420919D7CB0B00CCE4A4 /* style.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = style.png; sourceTree = "<group>"; };
 		C58B5A5719BBE664008999AC /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		C58B5A5C19BC0E46008999AC /* InstagramHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InstagramHandler.h; sourceTree = "<group>"; };
 		C58B5A5D19BC0E46008999AC /* InstagramHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InstagramHandler.m; sourceTree = "<group>"; };
@@ -71,6 +95,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C58841EF19D7580F00CCE4A4 /* libGPUImage.a in Frameworks */,
+				C53D4DDB19D5F05C00CCAEBB /* AVFoundation.framework in Frameworks */,
 				C58B5A5819BBE664008999AC /* MobileCoreServices.framework in Frameworks */,
 				C574488519BBC85300BBCC3B /* CoreGraphics.framework in Frameworks */,
 				C574488719BBC85300BBCC3B /* UIKit.framework in Frameworks */,
@@ -82,7 +108,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C57448A219BBC85300BBCC3B /* XCTest.framework in Frameworks */,
 				C57448A419BBC85300BBCC3B /* UIKit.framework in Frameworks */,
 				C57448A319BBC85300BBCC3B /* Foundation.framework in Frameworks */,
 			);
@@ -98,6 +123,7 @@
 				C57448A719BBC85300BBCC3B /* snapfashionTests */,
 				C574488119BBC85300BBCC3B /* Frameworks */,
 				C574488019BBC85300BBCC3B /* Products */,
+				C58841EC19D755F900CCE4A4 /* Release-iphone */,
 			);
 			sourceTree = "<group>";
 		};
@@ -113,11 +139,12 @@
 		C574488119BBC85300BBCC3B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				C58841EE19D7580F00CCE4A4 /* libGPUImage.a */,
+				C53D4DDA19D5F05C00CCAEBB /* AVFoundation.framework */,
 				C58B5A5719BBE664008999AC /* MobileCoreServices.framework */,
 				C574488219BBC85300BBCC3B /* Foundation.framework */,
 				C574488419BBC85300BBCC3B /* CoreGraphics.framework */,
 				C574488619BBC85300BBCC3B /* UIKit.framework */,
-				C57448A119BBC85300BBCC3B /* XCTest.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -138,6 +165,11 @@
 				C58B5A6919BD1490008999AC /* ImagePickerController.m */,
 				C58B5A6B19BD9900008999AC /* ImageCell.h */,
 				C58B5A6C19BD9900008999AC /* ImageCell.m */,
+				C53D4DDC19D5F2CF00CCAEBB /* OverlayView.h */,
+				C53D4DDD19D5F2CF00CCAEBB /* OverlayView.m */,
+				C58841F019D76AFF00CCE4A4 /* DiagView.h */,
+				C58841F119D76AFF00CCE4A4 /* DiagView.m */,
+				C588420619D7C13700CCE4A4 /* images */,
 			);
 			path = snapfashion;
 			sourceTree = "<group>";
@@ -169,6 +201,20 @@
 				C57448AA19BBC85300BBCC3B /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		C588420619D7C13700CCE4A4 /* images */ = {
+			isa = PBXGroup;
+			children = (
+				C588420919D7CB0B00CCE4A4 /* style.png */,
+				C58841F619D7769D00CCE4A4 /* alpacas.jpg */,
+				C58841FA19D7A2E300CCE4A4 /* reveal-icon.png */,
+				C58841FB19D7A2E300CCE4A4 /* reveal-icon@2x.png */,
+				C58841FE19D7C01100CCE4A4 /* Header.png */,
+				C588420019D7C11200CCE4A4 /* Trending logo.png */,
+				C588420119D7C11200CCE4A4 /* Snap Logo.png */,
+			);
+			name = images;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -247,9 +293,17 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C58841F719D7769D00CCE4A4 /* alpacas.jpg in Resources */,
 				C574489B19BBC85300BBCC3B /* Images.xcassets in Resources */,
 				C574488D19BBC85300BBCC3B /* InfoPlist.strings in Resources */,
+				C58841FD19D7A2E300CCE4A4 /* reveal-icon@2x.png in Resources */,
 				C574489619BBC85300BBCC3B /* Main.storyboard in Resources */,
+				C58841FC19D7A2E300CCE4A4 /* reveal-icon.png in Resources */,
+				C588420A19D7CB0B00CCE4A4 /* style.png in Resources */,
+				C58841FF19D7C01100CCE4A4 /* Header.png in Resources */,
+				C58841ED19D755F900CCE4A4 /* Release-iphone in Resources */,
+				C588420219D7C11200CCE4A4 /* Trending logo.png in Resources */,
+				C588420319D7C11200CCE4A4 /* Snap Logo.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -270,8 +324,10 @@
 			files = (
 				C58B5A6719BC5458008999AC /* StyleTableController.m in Sources */,
 				C58B5A6D19BD9900008999AC /* ImageCell.m in Sources */,
+				C53D4DDE19D5F2CF00CCAEBB /* OverlayView.m in Sources */,
 				C58B5A5E19BC0E46008999AC /* InstagramHandler.m in Sources */,
 				C58B5A6A19BD1490008999AC /* ImagePickerController.m in Sources */,
+				C58841F219D76AFF00CCE4A4 /* DiagView.m in Sources */,
 				C574489319BBC85300BBCC3B /* AppDelegate.m in Sources */,
 				C574488F19BBC85300BBCC3B /* main.m in Sources */,
 			);
@@ -396,12 +452,33 @@
 		C57448B219BBC85300BBCC3B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "snapfashion/snapfashion-Prefix.pch";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+				);
 				INFOPLIST_FILE = "snapfashion/snapfashion-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/snapfashion",
+					"$(PROJECT_DIR)/Release-iphone/**",
+					"$(PROJECT_DIR)/Release-iphone/lib",
+				);
+				OTHER_LDFLAGS = (
+					"-all_load",
+					"-ObjC",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				USER_HEADER_SEARCH_PATHS = "\"$(SRCROOT)/Release-iphone\"/**";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -409,12 +486,33 @@
 		C57448B319BBC85300BBCC3B /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "snapfashion/snapfashion-Prefix.pch";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+				);
 				INFOPLIST_FILE = "snapfashion/snapfashion-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/snapfashion",
+					"$(PROJECT_DIR)/Release-iphone/**",
+					"$(PROJECT_DIR)/Release-iphone/lib",
+				);
+				OTHER_LDFLAGS = (
+					"-all_load",
+					"-ObjC",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				USER_HEADER_SEARCH_PATHS = "\"$(SRCROOT)/Release-iphone\"/**";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
