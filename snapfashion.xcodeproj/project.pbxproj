@@ -31,6 +31,7 @@
 		C588420219D7C11200CCE4A4 /* Trending logo.png in Resources */ = {isa = PBXBuildFile; fileRef = C588420019D7C11200CCE4A4 /* Trending logo.png */; };
 		C588420319D7C11200CCE4A4 /* Snap Logo.png in Resources */ = {isa = PBXBuildFile; fileRef = C588420119D7C11200CCE4A4 /* Snap Logo.png */; };
 		C588420A19D7CB0B00CCE4A4 /* style.png in Resources */ = {isa = PBXBuildFile; fileRef = C588420919D7CB0B00CCE4A4 /* style.png */; };
+		C588420D19D7EF9C00CCE4A4 /* AlpacaViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C588420C19D7EF9C00CCE4A4 /* AlpacaViewController.m */; };
 		C58B5A5819BBE664008999AC /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C58B5A5719BBE664008999AC /* MobileCoreServices.framework */; };
 		C58B5A5E19BC0E46008999AC /* InstagramHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = C58B5A5D19BC0E46008999AC /* InstagramHandler.m */; };
 		C58B5A6719BC5458008999AC /* StyleTableController.m in Sources */ = {isa = PBXBuildFile; fileRef = C58B5A6619BC5458008999AC /* StyleTableController.m */; };
@@ -79,6 +80,8 @@
 		C588420019D7C11200CCE4A4 /* Trending logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Trending logo.png"; sourceTree = "<group>"; };
 		C588420119D7C11200CCE4A4 /* Snap Logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Snap Logo.png"; sourceTree = "<group>"; };
 		C588420919D7CB0B00CCE4A4 /* style.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = style.png; sourceTree = "<group>"; };
+		C588420B19D7EF9C00CCE4A4 /* AlpacaViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlpacaViewController.h; sourceTree = "<group>"; };
+		C588420C19D7EF9C00CCE4A4 /* AlpacaViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlpacaViewController.m; sourceTree = "<group>"; };
 		C58B5A5719BBE664008999AC /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		C58B5A5C19BC0E46008999AC /* InstagramHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InstagramHandler.h; sourceTree = "<group>"; };
 		C58B5A5D19BC0E46008999AC /* InstagramHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InstagramHandler.m; sourceTree = "<group>"; };
@@ -170,6 +173,8 @@
 				C58841F019D76AFF00CCE4A4 /* DiagView.h */,
 				C58841F119D76AFF00CCE4A4 /* DiagView.m */,
 				C588420619D7C13700CCE4A4 /* images */,
+				C588420B19D7EF9C00CCE4A4 /* AlpacaViewController.h */,
+				C588420C19D7EF9C00CCE4A4 /* AlpacaViewController.m */,
 			);
 			path = snapfashion;
 			sourceTree = "<group>";
@@ -330,6 +335,7 @@
 				C58841F219D76AFF00CCE4A4 /* DiagView.m in Sources */,
 				C574489319BBC85300BBCC3B /* AppDelegate.m in Sources */,
 				C574488F19BBC85300BBCC3B /* main.m in Sources */,
+				C588420D19D7EF9C00CCE4A4 /* AlpacaViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

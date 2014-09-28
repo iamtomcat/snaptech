@@ -34,6 +34,17 @@
   addCount = 0;
   numImages = 0;
   startPoint = CGPointZero;
+  
+  
+  if (igHandler==nil) {
+    igHandler = [InstagramHandler alloc];
+    igHandler.delegate = self;
+  }
+  //[self addHashButton];
+  clicked=YES;
+  [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:1] withRowAnimation:UITableViewRowAnimationTop];
+  [igHandler getTagData:@"streetstyle"];
+  
 }
 
 - (void)didReceiveMemoryWarning {
@@ -204,7 +215,7 @@
   if (scrollView.contentOffset.y<startPoint.y && clicked) {
     NSLog(@"down %@",[self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:2]]);
     [self removeSnapLabel];
-    [self addHashButton];
+    //[self addHashButton];
   } else if (scrollView.contentOffset.y>startPoint.y && clicked) {
     NSLog(@"up");
     [self addSnapLabel];
@@ -280,21 +291,7 @@
 //Handle clicks of the 2 cells for camera and loading of instagram images.
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
   if ([indexPath isEqual:[NSIndexPath indexPathForRow:0 inSection:0]]) {//Camera
-    NSLog(@"Open Camera Button Pressed");
-    if (camera==nil) {
-      camera = [ImagePickerController alloc];
-    }
-    [camera initCamera:self];
-  } else if ([indexPath isEqual:[NSIndexPath indexPathForRow:0 inSection:2]]) {//Instagram
-    NSLog(@"Instagram Button Pressed");
-    if (igHandler==nil) {
-      igHandler = [InstagramHandler alloc];
-      igHandler.delegate = self;
-    }
-    [self addHashButton];
-    clicked=YES;
-    [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:1] withRowAnimation:UITableViewRowAnimationTop];
-    [igHandler getTagData:@"streetstyle"];
+    [self.presentingViewController dismissViewControllerAnimated:YES completion:nil];
   }
 }
 

@@ -11,6 +11,7 @@
 @class GPUImageView,DiagView;
 
 @interface OverlayView : UIViewController
+- (void) startVideo;
 @property (nonatomic,weak) IBOutlet GPUImageView *filteredVideoView;
 @property (nonatomic,weak) IBOutlet DiagView *bottomView;
 @end

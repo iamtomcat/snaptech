@@ -10,11 +10,14 @@
 #import <AVFoundation/AVFoundation.h>
 #import "GPUImage.h"
 #import "DiagView.h"
+#import "ImagePickerController.h"
+#import "StyleTableController.h"
 
 @interface OverlayView () {
-  GPUImageVideoCamera *camera;
+  GPUImageVideoCamera *videoCamera;
   GPUImageBuffer *_videoBuffer;
   CGSize screenSize;
+  ImagePickerController *camera;
 }
 @end
 
@@ -33,8 +36,8 @@
 }
 
 - (void) initVideoView {
-  camera = [[GPUImageVideoCamera alloc]initWithSessionPreset:AVCaptureSessionPresetMedium cameraPosition:AVCaptureDevicePositionBack];
-  camera.outputImageOrientation = UIInterfaceOrientationPortrait;
+  videoCamera = [[GPUImageVideoCamera alloc]initWithSessionPreset:AVCaptureSessionPresetMedium cameraPosition:AVCaptureDevicePositionBack];
+  videoCamera.outputImageOrientation = UIInterfaceOrientationPortrait;
   
   GPUImageFilter *gaussFilter = [[GPUImageiOSBlurFilter alloc] init];
   
@@ -43,15 +46,27 @@
   _videoBuffer = [[GPUImageBuffer alloc] init];
   [_videoBuffer setBufferSize:1];
   
-  [camera addTarget:_videoBuffer];
-  [camera addTarget:gaussFilter];
+  [videoCamera addTarget:_videoBuffer];
+  [videoCamera addTarget:gaussFilter];
   [gaussFilter addTarget:self.filteredVideoView];
   
-  [camera startCameraCapture];
+  [videoCamera startCameraCapture];
 }
 
 - (void) initBottomHalf {
   self.bottomView.backgroundColor = [UIColor clearColor];
+}
+
+- (void) startVideo {
+  [self initVideoView];
+}
+
+- (IBAction) handleSnapButton:(id)sender {
+  if (camera==nil) {
+    camera = [ImagePickerController alloc];
+  }
+  [videoCamera stopCameraCapture];
+  [camera initCamera:self];
 }
 
 /*

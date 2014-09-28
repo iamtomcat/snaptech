@@ -8,10 +8,11 @@
 
 #import "ImagePickerController.h"
 #import "StyleTableController.h"
+#import "OverlayView.h"
 #import <MobileCoreServices/MobileCoreServices.h>
 
 @interface ImagePickerController () {
-StyleTableController *controllingView;
+id controllingView;
 }
 @end
 
@@ -37,8 +38,14 @@ StyleTableController *controllingView;
 
 //Handle closing camera controls.
 - (void) imagePickerControllerDidCancel: (UIImagePickerController *) picker {
-  [controllingView showButtons];
-  [controllingView dismissViewControllerAnimated:YES completion:nil];
+  if ([controllingView respondsToSelector:@selector(showButtons)]) {
+    [controllingView showButtons];
+  }
+  [controllingView dismissViewControllerAnimated:YES completion:^{
+    if ([controllingView respondsToSelector:@selector(startVideo)]) {
+      [controllingView startVideo];
+    }
+  }];
 }
 
 //Handle Saving image
@@ -58,7 +65,9 @@ StyleTableController *controllingView;
     UIImageWriteToSavedPhotosAlbum (imageToSave, nil, nil , nil);
   }
   
-  [controllingView showButtons];
+  if ([controllingView respondsToSelector:@selector(showButtons)]) {
+    [controllingView showButtons];
+  }
   [controllingView dismissViewControllerAnimated:YES completion:nil];
 }
 @end
