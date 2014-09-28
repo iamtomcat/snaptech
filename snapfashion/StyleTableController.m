@@ -40,8 +40,7 @@
     igHandler = [InstagramHandler alloc];
     igHandler.delegate = self;
   }
-  //[self addHashButton];
-  clicked=YES;
+   clicked=YES;
   [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:1] withRowAnimation:UITableViewRowAnimationTop];
   [igHandler getTagData:@"streetstyle"];
   

@@ -27,11 +27,11 @@
 		C58841F719D7769D00CCE4A4 /* alpacas.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C58841F619D7769D00CCE4A4 /* alpacas.jpg */; };
 		C58841FC19D7A2E300CCE4A4 /* reveal-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = C58841FA19D7A2E300CCE4A4 /* reveal-icon.png */; };
 		C58841FD19D7A2E300CCE4A4 /* reveal-icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C58841FB19D7A2E300CCE4A4 /* reveal-icon@2x.png */; };
-		C58841FF19D7C01100CCE4A4 /* Header.png in Resources */ = {isa = PBXBuildFile; fileRef = C58841FE19D7C01100CCE4A4 /* Header.png */; };
 		C588420219D7C11200CCE4A4 /* Trending logo.png in Resources */ = {isa = PBXBuildFile; fileRef = C588420019D7C11200CCE4A4 /* Trending logo.png */; };
 		C588420319D7C11200CCE4A4 /* Snap Logo.png in Resources */ = {isa = PBXBuildFile; fileRef = C588420119D7C11200CCE4A4 /* Snap Logo.png */; };
 		C588420A19D7CB0B00CCE4A4 /* style.png in Resources */ = {isa = PBXBuildFile; fileRef = C588420919D7CB0B00CCE4A4 /* style.png */; };
 		C588420D19D7EF9C00CCE4A4 /* AlpacaViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C588420C19D7EF9C00CCE4A4 /* AlpacaViewController.m */; };
+		C588421119D7F69B00CCE4A4 /* Header.png in Resources */ = {isa = PBXBuildFile; fileRef = C588421019D7F69B00CCE4A4 /* Header.png */; };
 		C58B5A5819BBE664008999AC /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C58B5A5719BBE664008999AC /* MobileCoreServices.framework */; };
 		C58B5A5E19BC0E46008999AC /* InstagramHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = C58B5A5D19BC0E46008999AC /* InstagramHandler.m */; };
 		C58B5A6719BC5458008999AC /* StyleTableController.m in Sources */ = {isa = PBXBuildFile; fileRef = C58B5A6619BC5458008999AC /* StyleTableController.m */; };
@@ -76,12 +76,12 @@
 		C58841F619D7769D00CCE4A4 /* alpacas.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = alpacas.jpg; sourceTree = "<group>"; };
 		C58841FA19D7A2E300CCE4A4 /* reveal-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "reveal-icon.png"; sourceTree = "<group>"; };
 		C58841FB19D7A2E300CCE4A4 /* reveal-icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "reveal-icon@2x.png"; sourceTree = "<group>"; };
-		C58841FE19D7C01100CCE4A4 /* Header.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Header.png; sourceTree = "<group>"; };
 		C588420019D7C11200CCE4A4 /* Trending logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Trending logo.png"; sourceTree = "<group>"; };
 		C588420119D7C11200CCE4A4 /* Snap Logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Snap Logo.png"; sourceTree = "<group>"; };
 		C588420919D7CB0B00CCE4A4 /* style.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = style.png; sourceTree = "<group>"; };
 		C588420B19D7EF9C00CCE4A4 /* AlpacaViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlpacaViewController.h; sourceTree = "<group>"; };
 		C588420C19D7EF9C00CCE4A4 /* AlpacaViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlpacaViewController.m; sourceTree = "<group>"; };
+		C588421019D7F69B00CCE4A4 /* Header.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Header.png; sourceTree = "<group>"; };
 		C58B5A5719BBE664008999AC /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		C58B5A5C19BC0E46008999AC /* InstagramHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InstagramHandler.h; sourceTree = "<group>"; };
 		C58B5A5D19BC0E46008999AC /* InstagramHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InstagramHandler.m; sourceTree = "<group>"; };
@@ -211,11 +211,11 @@
 		C588420619D7C13700CCE4A4 /* images */ = {
 			isa = PBXGroup;
 			children = (
+				C588421019D7F69B00CCE4A4 /* Header.png */,
 				C588420919D7CB0B00CCE4A4 /* style.png */,
 				C58841F619D7769D00CCE4A4 /* alpacas.jpg */,
 				C58841FA19D7A2E300CCE4A4 /* reveal-icon.png */,
 				C58841FB19D7A2E300CCE4A4 /* reveal-icon@2x.png */,
-				C58841FE19D7C01100CCE4A4 /* Header.png */,
 				C588420019D7C11200CCE4A4 /* Trending logo.png */,
 				C588420119D7C11200CCE4A4 /* Snap Logo.png */,
 			);
@@ -305,7 +305,7 @@
 				C574489619BBC85300BBCC3B /* Main.storyboard in Resources */,
 				C58841FC19D7A2E300CCE4A4 /* reveal-icon.png in Resources */,
 				C588420A19D7CB0B00CCE4A4 /* style.png in Resources */,
-				C58841FF19D7C01100CCE4A4 /* Header.png in Resources */,
+				C588421119D7F69B00CCE4A4 /* Header.png in Resources */,
 				C58841ED19D755F900CCE4A4 /* Release-iphone in Resources */,
 				C588420219D7C11200CCE4A4 /* Trending logo.png in Resources */,
 				C588420319D7C11200CCE4A4 /* Snap Logo.png in Resources */,

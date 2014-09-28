@@ -39,7 +39,8 @@
   videoCamera = [[GPUImageVideoCamera alloc]initWithSessionPreset:AVCaptureSessionPresetMedium cameraPosition:AVCaptureDevicePositionBack];
   videoCamera.outputImageOrientation = UIInterfaceOrientationPortrait;
   
-  GPUImageFilter *gaussFilter = [[GPUImageiOSBlurFilter alloc] init];
+  GPUImageFilter *gaussFilter = [[GPUImageGaussianBlurFilter alloc]init];
+  [(GPUImageGaussianBlurFilter *)gaussFilter setBlurRadiusInPixels:10.0f];
   
   self.filteredVideoView.fillMode = kGPUImageFillModeStretch;
   
