@@ -154,24 +154,7 @@
 //open the camera if the floating button is pressed
 //check which buttons are actually visible before removing them.
 - (void)snapTap:(id)sender {
-  if (camera==nil) {
-    camera = [ImagePickerController alloc];
-  }
-  
-  SnapButtonVisible = [self snapLabelVisible];
-  if (SnapButtonVisible) {
-    [UIView animateWithDuration:0.5f animations:^{
-      SnapButton.alpha = 0.0f;
-    }];
-  }
-  HashButtonVisible = [self hashLabelVisible];
-  if (HashButtonVisible) {
-    [UIView animateWithDuration:0.5f animations:^{
-      HashButton.alpha = 0.0f;
-    }];
-  }
-  
-  [camera initCamera:self];
+  [self.presentingViewController dismissViewControllerAnimated:YES completion:nil];
 }
 
 
@@ -184,7 +167,7 @@
     UITapGestureRecognizer *snapTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(snapTap:)];
     [SnapButton addGestureRecognizer:snapTap];
     
-    UILabel *snapLabel = [self createButtonLabel:@"SNAP IT"];
+    UILabel *snapLabel = [self createButtonLabel:@"Done"];
     [SnapButton addSubview:snapLabel];
   }
   
